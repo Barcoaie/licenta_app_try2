@@ -1,0 +1,17 @@
+Tomato___Spider_mites Two-spotted_spider_mite
+Tomato___healthy
+Tomato___Target_Spot
+Tomato___Late_blight
+Tomato___Bacterial_spot
+Tomato___Leaf_Mold
+Tomato___Early_blight
+Tomato___Tomato_mosaic_virus
+Tomato___Septoria_leaf_spot
+Tomato___Tomato_Yellow_Leaf_Curl_Virus
+Soybean___healthy
+Squash___Powdery_mildew
+Background_without_leaves
+Corn___healthy
+Corn___Northern_Leaf_Blight
+Corn___Cercospora_leaf_spot Gray_leaf_spot
+Corn___Common_rust
