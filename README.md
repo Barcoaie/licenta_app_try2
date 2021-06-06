@@ -1,6 +1,6 @@
 # licenta_app_try2
 
-A new Flutter project.
+Flutter project for the bachelor thesis that can predict certain leaf diseases and determine whether the plant is affected or not.
 
 ## Getting Started
 
