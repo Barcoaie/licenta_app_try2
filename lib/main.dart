@@ -3,6 +3,30 @@ import 'dart:io';
 import 'package:image_picker/image_picker.dart';
 import 'package:tflite/tflite.dart';
 
+var dictionary = {
+  0: 'Background without leaves',
+  1: 'Corn affected by Cercospora leaf spot/Gray leaf spot',
+  2: 'Corn affected by Common rust',
+  3: 'Corn affected by Northern Leaf Blight',
+  4: 'Healthy corn',
+  5: 'Healthy soybean',
+  6: 'Squash affected by Powdery mildew',
+  7: 'Tomato affected by Bacterial spot',
+  8: 'Tomato affected by Early blight',
+  9: 'Tomato affected by Late blight',
+  10: 'Tomato affected by Leaf Mold',
+  11: 'Tomato affected by Septoria leaf spot',
+  12: 'Tomato affected by Spider mites/Two-spotted spider mite',
+  13: 'Tomato affected by Target Spot',
+  14: 'Tomato affected by Tomato Yellow Leaf Curl Virus',
+  15: 'Tomato affected by mosaic virus',
+  16: 'Healthy tomato',
+};
+
+String getLabel(List outputs) {
+  return dictionary[outputs[0]['index']];
+}
+
 void main() {
   runApp(MyApp());
 }
@@ -13,7 +37,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'LeafVerdict',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.lightGreen,
       ),
       home: MyHomePage(title: 'Main Activity Screen'),
     );
@@ -110,8 +134,9 @@ class _MyHomePageState extends State<MyHomePage> {
                   ? Text('')
                   : Text(_outputs == null
                       ? ' '
-                      : _outputs[0]['label'].toString() +
-                          ' ' +
+                      : 'Picture detected is a ' +
+                          getLabel(_outputs) +
+                          ' with a confidence of ' +
                           _outputs[0]['confidence'].toString()),
             ),
             ElevatedButton(
