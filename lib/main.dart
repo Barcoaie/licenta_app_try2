@@ -40,6 +40,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.lightGreen,
       ),
       home: MyHomePage(title: 'Main Activity Screen'),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
@@ -137,7 +138,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       : 'Picture detected is a ' +
                           getLabel(_outputs) +
                           ' with a confidence of ' +
-                          _outputs[0]['confidence'].toString()),
+                          _outputs[0]['confidence'].toString().substring(0, 5)),
             ),
             ElevatedButton(
               onPressed: takeImage,
